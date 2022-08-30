@@ -5,10 +5,25 @@
     <description>${project.description}</description>  
     <version>${project.version}</version>  
     <vendor name="${project.organization.name}" url="${project.organization.url}"/>  
-    <param name="configure.url">/secure/extConfig.jspa</param>  
+    <param name="configure.url">/secure/ExtConfig.jspa</param>  
     <param name="plugin-icon">images/pluginIcon.png</param>  
     <param name="plugin-logo">images/pluginLogo.png</param> 
   </plugin-info>  
+
+  <!-- <bundle-instructions>
+    <Import-Package>
+        com.atlassian.sal.api,
+        com.atlassian.sal.api.auth,
+        com.atlassian.sal.api.pluginsettings,
+        com.atlassian.sal.api.transaction,
+        com.atlassian.sal.api.user,
+        javax.servlet;resolution:="optional",
+        javax.servlet.http;resolution:="optional",
+        javax.ws.rs;resolution:="optional",
+        javax.ws.rs.core;resolution:="optional",
+    </Import-Package>
+</bundle-instructions> -->
+
   <!-- add our i18n resource -->  
   <resource type="i18n" name="i18n" location="TimeAutomation"/>  
   <!-- add our web resources -->  
@@ -19,19 +34,26 @@
     <resource type="download" name="images/" location="/images"/>  
     <context>TimeAutomation</context> 
   </web-resource>  
-  <web-section name="Ext" i18n-name-key="ext.name" key="ext" location="admin_plugins_menu" weight="1000"> 
-    <description key="ext.description">The Ext Plugin</description>  
+
+  <web-section name="Time Automation" i18n-name-key="ext.name" 
+               key="ext-sec" 
+               location="system.top.navigation.bar" weight="1000"> 
+    <!-- <description key="ext.description">The Ext Plugin</description>   -->
     <label key="ext.label"/>  
   </web-section>  
-  <web-item name="Configuration" i18n-name-key="configuration.name" key="configuration" section="system.top.navigation.bar" weight="1000"> 
-    <description key="configuration.description">The Configuration Plugin</description>  
+
+  <web-item name="Configuration" i18n-name-key="configuration.name" 
+            key="configuration-item" 
+            section="system.top.navigation.bar/ext-sec" weight="10"> 
+    <!-- <description key="configuration.description">The Configuration Plugin</description>   -->
     <label key="configuration.label"/>  
-    <link linkId="configuration-link">/secure/extConfig.jspa</link> 
+    <link linkId="configuration-link">/secure/ExtConfig.jspa</link> 
   </web-item>  
-  <webwork1 key="configurationn-page" name="configuration-page" i18n-name-key="configurationn-page.name"> 
-    <description key="configurationn-page.description">The configuration-page Plugin</description>  
+
+  <webwork1 key="configurationn-page" name="configuration-page" i18n-name-key="configuration-page.name"> 
+    <description key="configuration-page.description">The configuration-page Plugin</description>  
     <actions> 
-      <action name="com.deadspace.ext.jira.webwork.configurationPageAction" alias="configurationPageAction"> 
+      <action name="com.deadspace.ext.jira.webwork.ExtConfig" alias="ExtensionConfiguration"> 
         <view name="success">/templates/configurationPage/success.vm</view>  
         <view name="input">/templates/configurationPage/input.vm</view>  
         <view name="error">/templates/configurationPage/error.vm</view> 

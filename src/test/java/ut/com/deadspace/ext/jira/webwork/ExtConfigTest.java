@@ -3,14 +3,11 @@ package ut.com.deadspace.ext.jira.webwork;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import com.deadspace.ext.jira.webwork.configurationPageAction;
-
-import static org.mockito.Mockito.*;
 
 /**
  * @since 3.5
  */
-public class configurationPageActionTest {
+public class ExtConfigTest {
 
     @Before
     public void setup() {

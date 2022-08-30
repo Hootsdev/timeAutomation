@@ -1,10 +1,10 @@
-package it.com.deadspace.ext.timeAutomation;
+package it.com.deadspace.ext.timeautomation;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import com.atlassian.plugins.osgi.test.AtlassianPluginsTestRunner;
-import com.deadspace.ext.timeAutomation.api.MyPluginComponent;
 import com.atlassian.sal.api.ApplicationProperties;
+import com.deadspace.ext.timeautomation.api.MyPluginComponent;
 
 import static org.junit.Assert.assertEquals;
 

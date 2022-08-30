@@ -1,9 +1,9 @@
-package com.deadspace.ext.timeAutomation.impl;
+package com.deadspace.ext.timeautomation.impl;
 
 import com.atlassian.plugin.spring.scanner.annotation.export.ExportAsService;
 import com.atlassian.plugin.spring.scanner.annotation.imports.ComponentImport;
 import com.atlassian.sal.api.ApplicationProperties;
-import com.deadspace.ext.timeAutomation.api.MyPluginComponent;
+import com.deadspace.ext.timeautomation.api.MyPluginComponent;
 
 import javax.inject.Inject;
 import javax.inject.Named;

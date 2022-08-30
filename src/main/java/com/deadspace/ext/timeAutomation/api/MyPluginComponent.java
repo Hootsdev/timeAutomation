@@ -1,4 +1,4 @@
-package com.deadspace.ext.timeAutomation.api;
+package com.deadspace.ext.timeautomation.api;
 
 public interface MyPluginComponent
 {
